@@ -779,6 +779,7 @@ when you need to retrieve a single record by some attributes.
 
 * <a name="block"></a>
   Use block syntax if the content of a helper is more complex than a simple string.
+<sup>[[link](#block)]</sup>
 
   ```erb
   <%# bad %>
@@ -789,7 +790,6 @@ when you need to retrieve a single record by some attributes.
     <span class="arrow"><%= model.name %></span>
   <% end %>
   ```
-<sup>[[link](#block)]</sup>
 
 ## Internationalization
 
