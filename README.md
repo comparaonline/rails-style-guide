@@ -171,10 +171,10 @@ programming resources.
     resources :comments
   end
   ```
-  
+
 * <a name="namespaced-routes"></a>
   If you need to nest routes more than 1 level deep then use the `shallow: true` option. This will save user from long urls `posts/1/comments/5/versions/7/edit` and you from long url helpers `edit_post_comment_version`.
-  
+
   ```Ruby
   resources :posts, shallow: true do
     resources :comments do
@@ -776,6 +776,20 @@ when you need to retrieve a single record by some attributes.
 * <a name="partials"></a>
   Mitigate code duplication by using partial templates and layouts.
 <sup>[[link](#partials)]</sup>
+
+* <a name="block"></a>
+  Use block syntax if the content of a helper is more complex than a simple string.
+
+  ```erb
+  <%# bad %>
+  <%= content_tag(:div, '<span class="arrow">' + model.name + '</span>', class: 'arrow-container') %>
+
+  <%# good %>
+  <%= content_tag(:div, class: 'arrow-container') do %>
+    <span class="arrow"><%= model.name %></span>
+  <% end %>
+  ```
+<sup>[[link](#block)]</sup>
 
 ## Internationalization
 
